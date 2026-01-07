@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* hero ocon dene #fbeaff 
+--bg-hero: #fdf4ff;*/
+
+:root {
+  --bg-header: #fdf4ff;
+  --bg-hero: #fbeaff;
+  --color-white: #fff;
+  --icon-hover: #edeef2;
+}
