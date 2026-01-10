@@ -5,9 +5,27 @@
 /* hero ocon dene #fbeaff 
 --bg-hero: #fdf4ff;*/
 
+/* text color  */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r
+      from-[#e462ab]
+      via-[#c29eaf]
+      to-[#005b4b]
+      bg-clip-text
+      text-transparent;
+  }
+}
+
 :root {
+  /* color */
   --bg-header: #fdf4ff;
   --bg-hero: #fbeaff;
   --color-white: #fff;
   --icon-hover: #edeef2;
+  --bg-pink: #fbd5e7;
+  /* text-font */
+  --text-lg: 1.125rem;
+  /* widht */
+  --container-3xl: 48rem;
 }

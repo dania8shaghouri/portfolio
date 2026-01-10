@@ -8,8 +8,7 @@ export default function Header() {
         className="mx-auto max-w-4xl bg-[var(--bg-header)]
        px-6 py-2 rounded-xl flex items-center justify-between"
       >
-        
-        <div className="text-xl font-bold">Portfolio</div>
+        <div className="text-xl font-bold text-gradient">Portfolio</div>
 
         <ul className="hidden md:flex gap-10 text-black font-medium">
           <li className="cursor-pointer rounded-md hover:bg-[var(--color-white)] hover:shadow-md transition-all px-2 py-1">
