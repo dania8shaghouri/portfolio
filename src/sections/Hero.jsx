@@ -5,6 +5,8 @@ import photo from "../assets/img/unnamed (2).png";
 import Button from "../components/ui/Button";
 // icons
 import { CgMail } from "react-icons/cg";
+import { FiGithub } from "react-icons/fi";
+import { LuLinkedin } from "react-icons/lu";
 export default function Hero() {
   return (
     <section className="min-h-screen bg-[var(--bg-hero)] flex items-center justify-center">
@@ -27,7 +29,7 @@ export default function Hero() {
         </span>
 
         {/* Typed title */}
-        <h1 className="text-6xl sm:text-5xl font-bold">
+        <h1 className="text-6xl sm:text-5xl font-bold mt-6">
           I’m{" "}
           <span className="text-gradient ">
             <ReactTyped
@@ -44,17 +46,51 @@ export default function Hero() {
             />
           </span>
         </h1>
-        <p className="max-w-[var(--container-3xl)] text-center text-xl">
+        <p className="max-w-[var(--container-3xl)] text-center text-xl mt-6">
           I focus on building clean, responsive and accessible user interfaces.
           I mainly work with React and Tailwind CSS, and I also have experience
           with Vue and full-stack projects.
         </p>
-        <div className="flex gap-4">
+        {/*  buttons */}
+        <div className="flex gap-4 mt-6">
           <Button variant="pink">View Projects</Button>
           <Button>
             {" "}
             <CgMail className="mr-1 text-lg" /> Contact Me
           </Button>
+        </div>
+        {/* contact */}
+        <div className="inline-flex gap-7 mt-6 ">
+          <a
+            href="https://github.com/dania8shaghouri"
+            target="_blank"
+            className="hover:bg-[var(--bg-header)] 
+               hover:scale-110 p-2
+               hover:shadow-md hover:rounded-md
+               transition-all duration-300"
+          >
+            <FiGithub className="text-lg" />
+          </a>
+          <a 
+          href="https://www.linkedin.com/in/dania-shaghouri-b4250b304/"
+            target="_blank"
+            className="hover:bg-[var(--bg-header)] 
+               hover:scale-110 p-2
+               hover:shadow-md hover:rounded-md
+               transition-all duration-300"
+          >
+            <LuLinkedin className="text-lg" />
+          </a>
+          <a
+            href="mailto:daniashaghouri.com"
+            target="_blank"
+            className="hover:bg-[var(--bg-header)] 
+               hover:scale-110 p-2
+               hover:shadow-md hover:rounded-md
+               transition-all duration-300"
+          >
+            <CgMail className="text-xl" />
+          </a>
         </div>
       </div>
     </section>
