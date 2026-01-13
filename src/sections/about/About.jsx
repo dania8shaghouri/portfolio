@@ -3,11 +3,13 @@ import { aboutText } from "./AboutText";
 import { FiZap, FiUsers } from "react-icons/fi";
 import { SiLoop } from "react-icons/si";
 
+import { AboutSkills } from "../../data/AboutSkills";
+
 export default function About() {
   return (
     <section
       id="about"
-      className="flex justify-center items-center
+      className="flex justify-center items-center px-5
        bg-[var(--bg-about)] py-20 min-h-screen"
     >
       <div className="grid lg:grid-cols-1 max-w-4xl ">
@@ -37,48 +39,31 @@ export default function About() {
             <p className="text-gray-600 leading-relaxed ">{aboutText}</p>
           </div>
 
+   
+
           {/* skills */}
-          <div className="grid sm:grid-cols-2 gap-3 mt-7">
-            {/* Performance */}
-            <div
-              className="bg-white rounded-2xl p-6 shadow-sm flex gap-4
-            border border-gray-300"
-            >
-              <div className="text-[#e462ab] text-2xl">
-                <FiZap />
-              </div>
-
-              <div>
-                <h3 className="font-semibold mb-1">Performance Optimization</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  I improve page load times and optimize rendering to deliver
-                  faster, smoother user experiences.
-                </p>
-              </div>
-            </div>
-
-            {/* Teamwork */}
-            <div
-              className="bg-white rounded-2xl p-6 shadow-sm flex gap-4
-            border border-gray-300"
-            >
-              <div className="text-[#e462ab] text-2xl">
-                <FiUsers />
-              </div>
-
-              <div>
-                <h3 className="font-semibold mb-1">Team Collaboration</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  I collaborate effectively with teams, contribute to shared
-                  goals and support clean, maintainable codebases.
-                </p>
-              </div>
-            </div>
+          <div className="grid sm:grid-cols-2 gap-3 mt-7 ">
+            {AboutSkills.map((skill, index) => {
+              const Icon = skill.icon;
+              return (
+                <div
+                  key={index}
+                  className="border border-gray-300 rounded-2xl
+                bg-white p-5 inline-flex"
+                >
+                  <Icon className="text-[#e462ab] text-4xl" />
+                  <div>
+                    <h3 className="font-semibold mb-1 pl-4">{skill.title} </h3>
+                    <p className="text-gray-500 text-sm leading-relaxed pl-4">
+                      {skill.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
-
-      
     </section>
   );
 }
