@@ -35,6 +35,11 @@ export const projects = [
       "Actively contributed to both frontend and backend development processes.",
       "Gained hands-on experience with RESTful APIs and database integration.",
     ],
+    screenshots: [
+      "/src/assets/img/Screenshot 2026-01-14 134935.png",
+      "/src/assets/img/Screenshot 2026-01-14 135124.png",
+      "/src/assets/img/Screenshot 2026-01-14 135255.png",
+    ],
   },
 
   //   Graduation Project
