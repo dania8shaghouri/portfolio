@@ -99,29 +99,26 @@ export default function Projects() {
                   </div>
 
                   {/* actions */}
-                  <div className="mt-4 flex gap-4">
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm font-medium text-[#005b4b] "
-                      >
-                        Live Demo →
-                      </a>
-                    )}
+                  {project.links && (
+                    <div className="mt-4 flex items-center gap-4">
+                      {Object.entries(project.links).map(([key, url]) => {
+                        const Icon = iconMap[key];
+                        if (!Icon) return null;
 
-                    {project.screenshots && (
-                      <button
-                        onClick={() =>
-                          setActiveScreenshots(project.screenshots)
-                        }
-                        className="text-sm font-medium text-[#005b4b] "
-                      >
-                        View Screenshots →
-                      </button>
-                    )}
-                  </div>
+                        return (
+                          <a
+                            key={key}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-[#005b4b] hover:text-[#e462ab] transition"
+                          >
+                            <Icon size={19} />
+                          </a>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
 
                 {/* modal */}

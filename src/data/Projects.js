@@ -75,6 +75,9 @@ export const projects = [
       "Implemented a component-based frontend structure with reusable UI components.",
       "Focused on clean, maintainable, and scalable code practices.",
     ],
-    link: "https://resorantapp.netlify.app/",
+    links: {
+      live: "https://resorantapp.netlify.app/",
+      github: "https://github.com/dania8shaghouri/restorantTailwindReact",
+    },
   },
 ];
