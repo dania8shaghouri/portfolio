@@ -16,7 +16,9 @@ export const projects = [
       "Implemented an interactive menu system with cart functionality.",
       "Created fully responsive reservation forms for mobile, tablet, and desktop devices.",
     ],
-    link: "https://locantajs.netlify.app/",
+    links: {
+      live: "https://locantajs.netlify.app/",
+    },
   },
   //   staj2
   {

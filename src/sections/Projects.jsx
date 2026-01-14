@@ -99,9 +99,10 @@ export default function Projects() {
                   </div>
 
                   {/* actions */}
-                  {project.links && (
-                    <div className="mt-4 flex items-center gap-4">
-                      {Object.entries(project.links).map(([key, url]) => {
+                  <div className="mt-4 flex items-center gap-4">
+                    {/* icon-based links */}
+                    {project.links &&
+                      Object.entries(project.links).map(([key, url]) => {
                         const Icon = iconMap[key];
                         if (!Icon) return null;
 
@@ -111,14 +112,29 @@ export default function Projects() {
                             href={url}
                             target="_blank"
                             rel="noopener noreferrer"
+                            title={
+                              key === "live" ? "Live Demo" : "GitHub Repository"
+                            }
                             className="flex items-center gap-1 text-[#005b4b] hover:text-[#e462ab] transition"
                           >
                             <Icon size={19} />
                           </a>
                         );
                       })}
-                    </div>
-                  )}
+
+                    {/* screenshots fallback (text button) */}
+                    {project.screenshots && (
+                      <button
+                        onClick={() => {
+                          setActiveScreenshots(project.screenshots);
+                          setCurrentIndex(0);
+                        }}
+                        className="text-sm font-medium text-[#005b4b] hover:underline"
+                      >
+                        View Screenshots →
+                      </button>
+                    )}
+                  </div>
                 </div>
 
                 {/* modal */}
