@@ -3,10 +3,12 @@ import { ReactTyped } from "react-typed";
 import photo from "../assets/img/unnamed (2).png";
 // component
 import Button from "../components/ui/Button";
+import SocialLinks from "../components/SocialLinks";
 // icons
 import { CgMail } from "react-icons/cg";
 import { FiGithub } from "react-icons/fi";
 import { LuLinkedin } from "react-icons/lu";
+
 export default function Hero() {
   return (
     <section className="min-h-screen bg-[var(--bg-hero)] flex items-center justify-center">
@@ -60,38 +62,8 @@ export default function Hero() {
           </Button>
         </div>
         {/* contact */}
-        <div className="inline-flex gap-7 mt-6 ">
-          <a
-            href="https://github.com/dania8shaghouri"
-            target="_blank"
-            className="hover:bg-[var(--bg-header)] 
-               hover:scale-110 p-2
-               hover:shadow-md hover:rounded-md
-               transition-all duration-300"
-          >
-            <FiGithub className="text-lg" />
-          </a>
-          <a 
-          href="https://www.linkedin.com/in/dania-shaghouri-b4250b304/"
-            target="_blank"
-            className="hover:bg-[var(--bg-header)] 
-               hover:scale-110 p-2
-               hover:shadow-md hover:rounded-md
-               transition-all duration-300"
-          >
-            <LuLinkedin className="text-lg" />
-          </a>
-          <a
-            href="mailto:daniashaghouri.com"
-            target="_blank"
-            className="hover:bg-[var(--bg-header)] 
-               hover:scale-110 p-2
-               hover:shadow-md hover:rounded-md
-               transition-all duration-300"
-          >
-            <CgMail className="text-xl" />
-          </a>
-        </div>
+
+        <SocialLinks className="mt-[50px]" />
       </div>
     </section>
   );
