@@ -3,12 +3,14 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import { TbSocial } from "react-icons/tb";
 import { FiClock } from "react-icons/fi";
 import { CgMail } from "react-icons/cg";
+import { IoIosSend } from "react-icons/io";
 // component
 import SocialLinks from "../components/SocialLinks";
 import ContactItem from "../components/ContactItem";
+import Button from "../components/ui/Button";
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative py-20 px-4 bg-[var(--bg-about)] ">
+    <section id="contact" className="relative py-20 px-4  ">
       <div className="flex flex-col items-center text-center mb-20">
         <span className="mb-4">
           <h2 className="border border-gray-300 py-1 px-3 rounded-xl text-xs font-semibold bg-[var(--bg-header)]">
@@ -24,11 +26,11 @@ export default function ContactSection() {
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 ">
         {/* LEFT COLUMN */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 ">
           {/* Contact Information */}
-          <div className="flex flex-col gap-3 bg-white rounded-xl p-6 shadow-sm border border-gray-300">
+          <div className="flex flex-col gap-3 bg-[var(--bg-about)] rounded-xl p-6 shadow-sm border border-gray-300">
             <div className="inline-flex gap-3 items-center">
               <IoChatbubbleEllipsesOutline className="text-[#e462ab] text-2xl" />
               <h2 className="font-semibold">Contact Information</h2>
@@ -59,7 +61,7 @@ export default function ContactSection() {
           </div>
 
           {/* Social Media */}
-          <div className="flex flex-col gap-3 bg-white rounded-xl p-6 shadow-sm border border-gray-300">
+          <div className="flex flex-col gap-3 bg-[var(--bg-about)] rounded-xl p-6 shadow-sm border border-gray-300">
             <div className="inline-flex gap-3 items-center">
               <TbSocial className="text-[#e462ab] text-2xl" />
               <h2 className="font-semibold">Social Media</h2>
@@ -71,53 +73,50 @@ export default function ContactSection() {
 
         {/* RIGHT COLUMN – FORM */}
         <div>
-          <form className="bg-white border border-gray-300 rounded-xl px-8 py-6 space-y-6 shadow-sm">
+          <form className="bg-[var(--bg-about)] border border-gray-300 rounded-xl px-8 py-6 space-y-6 shadow-sm">
             <h2 className="font-semibold">Send Message</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
               <div>
-                <label className="block mb-2">Name</label>
+                <label className="block mb-2 font-medium ">Name</label>
                 <input
                   type="text"
                   placeholder="Your name"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e462ab]"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#005b4b]"
                 />
               </div>
 
               <div>
-                <label className="block mb-2">Email</label>
+                <label className="block mb-2 font-medium">Email</label>
                 <input
                   type="email"
                   placeholder="you@example.com"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e462ab]"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#005b4b]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block mb-2"></label>
+              <label className="block mb-2 font-medium">Subject</label>
               <input
                 type="text"
                 placeholder="What is this message about?"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#e462ab]"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#005b4b]"
               />
             </div>
 
             <div>
-              <label className="block mb-2">Message</label>
+              <label className="block mb-2 font-medium">Message</label>
               <textarea
-                rows="4"
+                rows="2"
                 placeholder="Tell me about your project..."
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:outline-none focus:border-[#e462ab]"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:outline-none focus:border-[#005b4b]"
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-[#e462ab] text-white font-medium py-3 rounded-lg hover:opacity-90 transition"
-            >
-              Send Message
-            </button>
+            <Button variant="pink" className="w-full">
+              <IoIosSend className="mr-1 text-lg" /> Send Message
+            </Button>
           </form>
         </div>
       </div>
