@@ -21,7 +21,7 @@ export default function SkillCard({ title, icon: Icon, items, color }) {
             <div
               key={i}
               className="
-                flex items-center gap-2
+                flex  gap-3
                 px-3 py-2
                 mt-2
                 rounded-lg
@@ -30,9 +30,12 @@ export default function SkillCard({ title, icon: Icon, items, color }) {
               "
             >
               <Icon
-                className={`text-xl ${item.iconColor ?? "text-gray-500"}`}
+                className={`text-xl mt-1 ${item.iconColor ?? "text-gray-500"}`}
               />
-              <span>{item.name}</span>
+              <div className="flex flex-col">
+                <span className="font-medium">{item.name}</span>
+                <p className="text-sm text-gray-500 ">{item.description}</p>
+              </div>
             </div>
           );
         })}
