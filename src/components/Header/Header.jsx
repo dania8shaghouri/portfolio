@@ -7,6 +7,21 @@ import { RxHamburgerMenu } from "react-icons/rx";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleScroll = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    el.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
+
+  const menuItems = [
+    { label: "About Me", id: "about" },
+    { label: "Projects", id: "projects" },
+    { label: "Skills", id: "skills" },
+    { label: "Contact", id: "contact" },
+  ];
+
   return (
     <header className="fixed top-4 left-0 w-full z-50">
       <nav
@@ -18,13 +33,15 @@ export default function Header() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-10 text-black font-medium">
-          {["About Me", "Projects", "Skills", "Contact"].map((item) => (
+          {menuItems.map((item) => (
             <li
-              key={item}
-              className="cursor-pointer rounded-md hover:bg-[var(--color-white)]
-              hover:shadow-md transition-all px-2 py-1"
+              key={item.id}
+              onClick={() => handleScroll(item.id)}
+              className="cursor-pointer rounded-md
+      hover:bg-[var(--color-white)]
+      hover:shadow-md transition-all px-2 py-1"
             >
-              {item}
+              {item.label}
             </li>
           ))}
         </ul>
@@ -52,14 +69,14 @@ export default function Header() {
             flex flex-col  gap-4 p-4 md:hidden
             border-t border-gray-200"
           >
-            {["About Me", "Projects", "Skills", "Contact"].map((item) => (
+            {menuItems.map((item) => (
               <li
-                key={item}
-                onClick={() => setIsOpen(false)}
+                key={item.id}
+                onClick={() => handleScroll(item.id)}
                 className="cursor-pointer rounded-md hover:border hover:border-gray-200 hover:rounded-lg hover:bg-white
                 transition-all px-2 py-2 text-start font-medium"
               >
-                {item}
+                {item.label}
               </li>
             ))}
           </ul>

@@ -10,7 +10,7 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <section className="relative max-w-6xl mx-auto px-5 py-20">
+    <section id="projects" className="relative max-w-6xl mx-auto px-5 py-20">
       {/* INTRO */}
       <div className="flex flex-col items-center text-center mb-20">
         <span className="mb-4">
