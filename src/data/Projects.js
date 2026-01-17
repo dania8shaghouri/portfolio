@@ -1,3 +1,7 @@
+import shot1 from "/src/assets/img/Screenshot 2026-01-14 135255.png";
+import shot2 from "/src/assets/img/Screenshot 2026-01-14 135124.png";
+import shot3 from "/src/assets/img/Screenshot 2026-01-14 134935.png";
+
 export const projects = [
   // staj1
   {
@@ -37,11 +41,7 @@ export const projects = [
       "Actively contributed to both frontend and backend development processes.",
       "Gained hands-on experience with RESTful APIs and database integration.",
     ],
-    screenshots: [
-      "/src/assets/img/Screenshot 2026-01-14 134935.png",
-      "/src/assets/img/Screenshot 2026-01-14 135124.png",
-      "/src/assets/img/Screenshot 2026-01-14 135255.png",
-    ],
+    screenshots: [shot1, shot2, shot3],
   },
 
   //   Graduation Project

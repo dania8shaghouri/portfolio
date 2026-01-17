@@ -1,4 +1,4 @@
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "../SocialLinks";
 
 export default function Footer() {
   return (
@@ -28,7 +28,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-center">
             <li>
               <a
-                href="#home"
+                href="#"
                 className="text-gray-600 hover:text-[#005b4b] transition"
               >
                 Home
@@ -39,7 +39,7 @@ export default function Footer() {
                 href="#about"
                 className="text-gray-600 hover:text-[#005b4b] transition"
               >
-                About
+                About Me
               </a>
             </li>
             <li>

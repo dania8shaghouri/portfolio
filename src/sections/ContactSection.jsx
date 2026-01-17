@@ -6,7 +6,7 @@ import { CgMail } from "react-icons/cg";
 import { IoIosSend } from "react-icons/io";
 // component
 import SocialLinks from "../components/SocialLinks";
-import ContactItem from "../components/ContactItem";
+import ContactItem from "../components/ui/ContactItem";
 import Button from "../components/ui/Button";
 export default function ContactSection() {
   return (

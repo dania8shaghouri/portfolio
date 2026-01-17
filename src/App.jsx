@@ -1,5 +1,5 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header/Header";
+import Footer from "./components/layout/Footer";
+import Header from "./components/layout/Header";
 import About from "./sections/about/About";
 import ContactSection from "./sections/ContactSection";
 import Hero from "./sections/Hero";
