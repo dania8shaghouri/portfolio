@@ -59,11 +59,22 @@ export default function Hero() {
         </p>
         {/*  buttons */}
         <div className="flex gap-4 mt-6">
-          <Button variant="pink">View Projects</Button>
-          <Button>
-            {" "}
-            <CgMail className="mr-1 text-lg" /> Contact Me
+          <Button
+            onClick={() =>
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            variant="pink"
+          >
+            View Projects
           </Button>
+          <a href="mailto:dania@example.com">
+            <Button>
+              <CgMail className="mr-1 text-lg" />
+              Contact Me
+            </Button>
+          </a>
         </div>
         {/* contact */}
 
