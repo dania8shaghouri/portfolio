@@ -23,10 +23,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-4 left-0 w-full z-50">
+    <header className="fixed top-4 left-0 w-full z-50 ">
       <nav
-        className="mx-auto max-w-4xl bg-[var(--bg-header)]
-        px-6 py-2 rounded-xl flex items-center justify-between relative"
+        className="
+        mx-4 md:mx-auto max-w-full md:max-w-4xl
+        border border-gray-300 
+        bg-[var(--bg-header)]
+        px-6 py-2 
+        rounded-xl flex items-center justify-between relative"
       >
         {/* Logo */}
         <div className="text-xl font-bold text-gradient">Portfolio</div>
@@ -74,7 +78,7 @@ export default function Header() {
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
                 className="cursor-pointer rounded-md hover:border hover:border-gray-200 hover:rounded-lg hover:bg-white
-                transition-all px-2 py-2 text-start font-medium"
+                transition-all px-3 py-3 text-start font-medium"
               >
                 {item.label}
               </li>

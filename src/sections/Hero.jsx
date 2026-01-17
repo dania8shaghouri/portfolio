@@ -6,15 +6,16 @@ import Button from "../components/ui/Button";
 import SocialLinks from "../components/SocialLinks";
 // icons
 import { CgMail } from "react-icons/cg";
-import { FiGithub } from "react-icons/fi";
-import { LuLinkedin } from "react-icons/lu";
 
 export default function Hero() {
   return (
     <section className="min-h-screen bg-[var(--bg-hero)] flex items-center justify-center">
       <div
         className="capitalize 
-      flex flex-col gap-2 items-center justify-center"
+      flex flex-col gap-2 items-center justify-center
+      px-4
+    max-w-3xl
+    mx-auto"
       >
         <img
           src={photo}
@@ -23,7 +24,7 @@ export default function Hero() {
          "
         />
         <span
-          className="font-medium border border-gray-300 
+          className="font-medium text-sm sm:text-base border border-gray-300 
         py-1 px-2 rounded-lg bg-[var(--bg-pink)]
         mt-4"
         >
@@ -31,7 +32,7 @@ export default function Hero() {
         </span>
 
         {/* Typed title */}
-        <h1 className="text-6xl sm:text-5xl font-bold mt-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-6">
           I’m{" "}
           <span className="text-gradient ">
             <ReactTyped
@@ -48,7 +49,10 @@ export default function Hero() {
             />
           </span>
         </h1>
-        <p className="max-w-[var(--container-3xl)] text-center text-xl mt-6">
+        <p
+          className="max-w-[var(--container-3xl)] text-center text-base sm:text-lg md:text-xl
+    mt-4 sm:mt-6 "
+        >
           I focus on building clean, responsive and accessible user interfaces.
           I mainly work with React and Tailwind CSS, and I also have experience
           with Vue and full-stack projects.
@@ -63,7 +67,7 @@ export default function Hero() {
         </div>
         {/* contact */}
 
-        <SocialLinks className="mt-[50px]" />
+        <SocialLinks className="mt-8 sm:mt-12" />
       </div>
     </section>
   );
