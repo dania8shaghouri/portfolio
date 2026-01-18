@@ -19,7 +19,7 @@ export default function SkillsSection() {
             scalable web applications.
           </p>
         </div>
-        <AnimatedSection>
+        <AnimatedSection direction="left">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center ">
             {skillsData.map((skill, i) => (
               <SkillCard
