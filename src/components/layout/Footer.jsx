@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--bg-about)] border-t border-gray-300 mt-24">
       <AnimatedSection direction="down">
-        <div className="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="max-w-4xl mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* 1. Portfolio */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-gradient  text-center">

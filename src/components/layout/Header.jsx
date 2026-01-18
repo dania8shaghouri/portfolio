@@ -23,13 +23,21 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-4 left-0 w-full z-50 ">
-      <nav
+    <header className="fixed top-4 left-0 right-0 px-4 w-full z-50 ">
+      {/* <nav
         className="
-          mx-4 md:mx-auto max-w-full md:max-w-4xl
+          mx-4 md:mx-auto  md:max-w-4xl
           border border-gray-300
           bg-[var(--bg-header)]
-          px-6 py-2
+          px-6 py-2 box-border
+          rounded-xl flex items-center justify-between relative"
+      > */}
+      <nav
+        className="
+          mx-auto max-w-4xl
+          border border-gray-300
+          bg-[var(--bg-header)]
+          px-6 py-2 
           rounded-xl flex items-center justify-between relative"
       >
         {/* Logo */}

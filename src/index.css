@@ -16,6 +16,23 @@
       text-transparent;
   }
 }
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+}
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
 
 :root {
   /* color */
@@ -33,4 +50,3 @@
   /* widht */
   --container-3xl: 48rem;
 }
-

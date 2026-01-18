@@ -22,13 +22,13 @@ export default function Hero() {
           <img
             src={photo}
             alt="photo"
-            className="w-32 h-32 rounded-full object-cover 
+            className="w-32 h-32 rounded-full object-cover md:mt-[70px]
          "
           />
           <span
             className="font-medium text-sm sm:text-base border border-gray-300 
         py-1 px-2 rounded-lg bg-[var(--bg-pink)]
-        mt-4"
+        mt-6"
           >
             🤖Computer engineer
           </span>
