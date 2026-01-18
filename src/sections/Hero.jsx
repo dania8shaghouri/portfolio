@@ -10,7 +10,7 @@ import AnimatedSection from "../components/AnimatedSection";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen bg-[var(--bg-hero)] flex items-center justify-center">
+    <section className="min-h-screen bg-[var(--bg-hero)] flex items-center justify-center ">
       <AnimatedSection direction="down">
         <div
           className="capitalize 
@@ -22,7 +22,7 @@ export default function Hero() {
           <img
             src={photo}
             alt="photo"
-            className="w-32 h-32 rounded-full object-cover
+            className="w-32 h-32 rounded-full object-cover 
          "
           />
           <span
@@ -34,7 +34,7 @@ export default function Hero() {
           </span>
 
           {/* Typed title */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-3">
             I’m{" "}
             <span className="text-gradient ">
               <ReactTyped
