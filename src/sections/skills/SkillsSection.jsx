@@ -1,6 +1,6 @@
 import SkillCard from "./SkillCard";
 import { skillsData } from "../../data/skillsData";
-import AnimatedSection from "../../components/AnimatedSection";
+
 export default function SkillsSection() {
   return (
     <section id="skills" className="py-20 px-4 bg-[var(--bg-about)]">
@@ -19,19 +19,18 @@ export default function SkillsSection() {
             scalable web applications.
           </p>
         </div>
-        <AnimatedSection direction="left">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center ">
-            {skillsData.map((skill, i) => (
-              <SkillCard
-                key={i}
-                title={skill.title}
-                icon={skill.icon}
-                items={skill.items}
-                color={skill.color}
-              />
-            ))}
-          </div>
-        </AnimatedSection>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 justify-center ">
+          {skillsData.map((skill, i) => (
+            <SkillCard
+              key={i}
+              title={skill.title}
+              icon={skill.icon}
+              items={skill.items}
+              color={skill.color}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
