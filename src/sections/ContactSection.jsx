@@ -1,3 +1,4 @@
+// icons
 import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 import { MdOutlineLocationOn } from "react-icons/md";
 import { TbSocial } from "react-icons/tb";
@@ -11,35 +12,57 @@ import Button from "../components/ui/Button";
 //
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+//
+import toast from "react-hot-toast";
 
 export default function ContactSection() {
   const formRef = useRef(null);
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const form = formRef.current;
+    const name = form.user_name.value.trim();
+    const email = form.user_email.value.trim();
+    const subject = form.subject.value.trim();
+    const message = form.message.value.trim();
+
+    //  boş alan kontrolü
+    if (!name || !email || !subject || !message) {
+      toast.error("Please fill in all fields");
+      return;
+    }
+
+    //  email format kontrolü
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
     setLoading(true);
 
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
-
-      .then(
-        () => {
-          alert("Message sent successfully 🚀");
-          formRef.current.reset();
-          setLoading(false);
+    toast
+      .promise(
+        emailjs.sendForm(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          form,
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        ),
+        {
+          loading: "Sending message...",
+          success: "Message sent successfully 🚀",
+          error: "Message could not be sent 😕",
         },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          alert("Message could not be sent 😕");
-          setLoading(false);
-        }
-      );
+      )
+      .then(() => {
+        form.reset();
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
