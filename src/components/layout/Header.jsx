@@ -19,6 +19,7 @@ export default function Header() {
     { label: "About Me", id: "about" },
     { label: "Projects", id: "projects" },
     { label: "Skills", id: "skills" },
+    { label: "Certificates", id: "certificates" },
     { label: "Contact", id: "contact" },
   ];
 
