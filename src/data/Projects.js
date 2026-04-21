@@ -2,6 +2,10 @@ import shot1 from "/src/assets/img/Screenshot 2026-01-14 135255.png";
 import shot2 from "/src/assets/img/Screenshot 2026-01-14 135124.png";
 import shot3 from "/src/assets/img/Screenshot 2026-01-14 134935.png";
 
+// e-commerce react
+import eco1 from "/src/assets/img/E1.png";
+import eco2 from "/src/assets/img/E2.png";
+import eco3 from "/src/assets/img/E3.png";
 export const projects = [
   // staj1
   {
@@ -80,6 +84,35 @@ export const projects = [
     links: {
       live: "https://resorantapp.netlify.app/",
       github: "https://github.com/dania8shaghouri/restorantTailwindReact",
+    },
+  },
+  {
+    company: "E-Commerce Web Application",
+    role: "Personal Full Stack Project (Ongoing)",
+    meta: [
+      { icon: "calendar", value: "2026" },
+      { icon: "personal", value: "Personal Project" },
+      { icon: "location", value: "Remote" },
+    ],
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "REST API",
+      "Tailwind CSS",
+    ],
+    description: [
+      "Built a full-stack e-commerce application with authentication (register/login), product listing, and product detail pages.",
+      "Implemented cart functionality including add, update quantity, and remove item features.",
+      "Started checkout flow with basic address information collection.",
+      "Developed RESTful APIs using Node.js and Express.",
+      "Managed data with MongoDB (users, products, cart).",
+      "Built a responsive frontend using React and Tailwind CSS.",
+    ],
+    screenshots: [eco1, eco2, eco3],
+    links: {
+      github: "https://github.com/dania8shaghouri/e-commerce",
     },
   },
 ];
