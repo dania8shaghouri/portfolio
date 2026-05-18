@@ -1,5 +1,6 @@
 import cer1 from "../assets/certificates/b421684b-3995-471a-bb95-892b1564900a.jpg";
 import cer2 from "../assets/certificates/udemy.jpg";
+import cer3 from "../assets/img/Aİ.png";
 
 export const certificatesData = [
   {
@@ -22,5 +23,15 @@ export const certificatesData = [
     image: cer2,
     link: "https://ude.my/UC-569c9798-0dca-4d55-8d69-c663a5ac18c0",
     certificateType: "Completion Certificate",
+  },
+  {
+    title: "AI & Digital Skills Camp",
+    issuer: "UNICEF & Habitat Derneği",
+    description:
+      "Geleceği Eşitle Projesi kapsamında 21 Şubat - 14 Nisan 2026 tarihleri arasında çevrim içi gerçekleştirilen AI & Digital Skills Camp programına katılım sağlanarak bu sertifika alınmıştır.",
+    date: "Feb 2026 – Apr 2026",
+    image: cer3,
+    link: "",
+    certificateType: "Participation Certificate",
   },
 ];
