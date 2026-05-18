@@ -19,7 +19,7 @@ export const certificatesData = [
     issuer: "Udemy - Yahya ElAraby",
     description:
       "Full-stack development eğitimi. REST API, authentication, React hooks ve MongoDB integration konularını kapsar.",
-    date: "Apr 2026",
+    date: "Nisan 2026",
     image: cer2,
     link: "https://ude.my/UC-569c9798-0dca-4d55-8d69-c663a5ac18c0",
     certificateType: "Completion Certificate",
@@ -29,7 +29,7 @@ export const certificatesData = [
     issuer: "UNICEF & Habitat Derneği",
     description:
       "Geleceği Eşitle Projesi kapsamında 21 Şubat - 14 Nisan 2026 tarihleri arasında çevrim içi gerçekleştirilen AI & Digital Skills Camp programına katılım sağlanarak bu sertifika alınmıştır.",
-    date: "Feb 2026 – Apr 2026",
+    date: "Şubat 2026 – Nisan 2026",
     image: cer3,
     link: "",
     certificateType: "Participation Certificate",
