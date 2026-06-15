@@ -7,18 +7,22 @@ import Hero from "./sections/Hero";
 import Projects from "./sections/Projects";
 import SkillsSection from "./sections/skills/SkillsSection";
 
+//
+import { useState } from "react";
+
 function App() {
+  const [language, setLanguage] = useState("en");
   return (
     <>
-      <Header />
+      <Header language={language} setLanguage={setLanguage} />
       <main>
-        <Hero />
-        <About />
-        <Projects />
-        <SkillsSection />
-        <CertificatesSection />
-        <ContactSection />
-        <Footer />
+        <Hero language={language} />
+        <About language={language} />
+        <Projects language={language} />
+        <SkillsSection language={language} />
+        <CertificatesSection language={language} />
+        <ContactSection language={language} />
+        <Footer language={language} />
       </main>
     </>
   );

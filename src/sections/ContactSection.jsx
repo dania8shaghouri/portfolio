@@ -16,7 +16,86 @@ import emailjs from "@emailjs/browser";
 //
 import toast from "react-hot-toast";
 
-export default function ContactSection() {
+const content = {
+  en: {
+    badge: "Contact",
+    title: "Let’s work together",
+    description:
+      "I’m always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+    infoTitle: "Contact Information",
+    socialTitle: "Social Media",
+    formTitle: "Send Message",
+
+    labels: {
+      name: "Name",
+      email: "Email",
+      subject: "Subject",
+      message: "Message",
+    },
+
+    placeholders: {
+      name: "Your name",
+      email: "you@example.com",
+      subject: "What is this message about?",
+      message: "Tell me about your project...",
+    },
+
+    contact: {
+      email: "Gmail",
+      location: "Location",
+      response: "Response time",
+      responseValue: "Usually replies within 24 hours",
+      locationValue: "Bursa, Türkiye",
+    },
+
+    button: {
+      sending: "Sending...",
+      send: "Send Message",
+    },
+  },
+
+  tr: {
+    badge: "İletişim",
+    title: "Birlikte çalışalım",
+    description:
+      "Yeni projeler, yaratıcı fikirler veya iş fırsatları hakkında konuşmaya her zaman açığım.",
+
+    infoTitle: "İletişim Bilgileri",
+    socialTitle: "Sosyal Medya",
+    formTitle: "Mesaj Gönder",
+
+    labels: {
+      name: "İsim",
+      email: "E-posta",
+      subject: "Konu",
+      message: "Mesaj",
+    },
+
+    placeholders: {
+      name: "Adınız",
+      email: "ornek@mail.com",
+      subject: "Mesaj konusu nedir?",
+      message: "Projeniz hakkında yazın...",
+    },
+
+    contact: {
+      email: "E-posta",
+      location: "Konum",
+      response: "Yanıt süresi",
+      responseValue: "Genelde 24 saat içinde dönüş yaparım",
+      locationValue: "Bursa, Türkiye",
+    },
+
+    button: {
+      sending: "Gönderiliyor...",
+      send: "Mesaj Gönder",
+    },
+  },
+};
+
+export default function ContactSection({ language }) {
+  const text = content[language];
+
   const formRef = useRef(null);
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const [loading, setLoading] = useState(false);
@@ -30,13 +109,11 @@ export default function ContactSection() {
     const subject = form.subject.value.trim();
     const message = form.message.value.trim();
 
-    //  boş alan kontrolü
     if (!name || !email || !subject || !message) {
       toast.error("Please fill in all fields");
       return;
     }
 
-    //  email format kontrolü
     if (!emailRegex.test(email)) {
       toast.error("Please enter a valid email address");
       return;
@@ -58,142 +135,118 @@ export default function ContactSection() {
           error: "Message could not be sent 😕",
         },
       )
-      .then(() => {
-        form.reset();
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      .then(() => form.reset())
+      .finally(() => setLoading(false));
   };
 
   return (
-    <section id="contact" className="relative py-20 px-4  ">
+    <section id="contact" className="relative py-20 px-4">
+      {/* HEADER */}
       <div className="flex flex-col items-center text-center mb-20">
-        <span className="mb-4">
-          <h2 className="border border-gray-300 py-1 px-3 rounded-xl text-xs font-semibold bg-[var(--bg-header)]">
-            Contact
-          </h2>
-        </span>
+        <h2 className="border border-gray-300 py-1 px-3 rounded-xl text-xs font-semibold bg-[var(--bg-header)]">
+          {text.badge}
+        </h2>
 
-        <h2 className="text-3xl font-bold mb-4">Let’s work together</h2>
+        <h2 className="text-3xl font-bold mb-4">{text.title}</h2>
 
-        <p className="max-w-2xl text-sm md:text-base text-gray-600 leading-relaxed">
-          I’m always open to discussing new projects, creative ideas, or
-          opportunities to be part of your vision.
+        <p className="max-w-2xl text-sm md:text-base text-gray-600">
+          {text.description}
         </p>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 ">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
         <AnimatedSection direction="left">
-          {/* LEFT COLUMN */}
-          <div className="flex flex-col gap-8 ">
-            {/* Contact Information */}
+          <div className="flex flex-col gap-8">
+            {/* INFO */}
             <div className="flex flex-col gap-3 bg-[var(--bg-about)] rounded-xl p-6 shadow-sm border border-gray-300">
-              <div className="inline-flex gap-3 items-center">
-                <IoChatbubbleEllipsesOutline className="text-[#e462ab] text-2xl" />
-                <h2 className="font-semibold">Contact Information</h2>
-              </div>
+              <h2 className="font-semibold">{text.infoTitle}</h2>
 
               <div className="px-8 space-y-5">
                 <ContactItem
                   icon={<CgMail />}
-                  title="Gmail"
+                  title={text.contact.email}
                   value="daniashaghouri@gmail.com"
                   color="text-blue-400"
                 />
 
                 <ContactItem
                   icon={<MdOutlineLocationOn />}
-                  title="Location"
-                  value="Bursa, Türkiye"
+                  title={text.contact.location}
+                  value={text.contact.locationValue}
                   color="text-red-400"
                 />
 
                 <ContactItem
                   icon={<FiClock />}
-                  title="Response time"
-                  value="Usually replies within 24 hours"
+                  title={text.contact.response}
+                  value={text.contact.responseValue}
                   color="text-emerald-400"
                 />
               </div>
             </div>
 
-            {/* Social Media */}
+            {/* SOCIAL */}
             <div className="flex flex-col gap-3 bg-[var(--bg-about)] rounded-xl p-6 shadow-sm border border-gray-300">
-              <div className="inline-flex gap-3 items-center">
-                <TbSocial className="text-[#e462ab] text-2xl" />
-                <h2 className="font-semibold">Social Media</h2>
-              </div>
-
+              <h2 className="font-semibold">{text.socialTitle}</h2>
               <SocialLinks show={["linkedin", "github"]} className="px-7" />
             </div>
           </div>
         </AnimatedSection>
 
-        {/* RIGHT COLUMN – FORM */}
-        <div>
-          <AnimatedSection direction="right">
-            <form
-              ref={formRef}
-              onSubmit={handleSubmit}
-              className="bg-[var(--bg-about)] border border-gray-300 rounded-xl px-8 py-6 space-y-6 shadow-sm"
-            >
-              <h2 className="font-semibold">Send Message</h2>
+        {/* FORM */}
+        <AnimatedSection direction="right">
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="bg-[var(--bg-about)] border border-gray-300 rounded-xl px-8 py-6 space-y-6 shadow-sm"
+          >
+            <h2 className="font-semibold">{text.formTitle}</h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
-                <div>
-                  <label className="block mb-2 font-medium ">Name</label>
-                  <input
-                    name="user_name"
-                    type="text"
-                    placeholder="Your name"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#005b4b]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-2 font-medium">Email</label>
-                  <input
-                    name="user_email"
-                    type="email"
-                    placeholder="you@example.com"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#005b4b]"
-                  />
-                </div>
-              </div>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-7">
               <div>
-                <label className="block mb-2 font-medium">Subject</label>
+                <label>{text.labels.name}</label>
                 <input
-                  name="subject"
-                  type="text"
-                  placeholder="What is this message about?"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#005b4b]"
+                  name="user_name"
+                  placeholder={text.placeholders.name}
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm"
                 />
               </div>
 
               <div>
-                <label className="block mb-2 font-medium">Message</label>
-                <textarea
-                  name="message"
-                  rows="2"
-                  placeholder="Tell me about your project..."
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm resize-none focus:outline-none focus:border-[#005b4b]"
+                <label>{text.labels.email}</label>
+                <input
+                  name="user_email"
+                  type="email"
+                  placeholder={text.placeholders.email}
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm"
                 />
               </div>
+            </div>
 
-              <Button variant="pink" className="w-full" disabled={loading}>
-                {loading ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    <IoIosSend className="mr-1 text-lg" /> Send Message
-                  </>
-                )}
-              </Button>
-            </form>
-          </AnimatedSection>
-        </div>
+            <div>
+              <label>{text.labels.subject}</label>
+              <input
+                name="subject"
+                placeholder={text.placeholders.subject}
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm"
+              />
+            </div>
+
+            <div>
+              <label>{text.labels.message}</label>
+              <textarea
+                name="message"
+                rows="2"
+                placeholder={text.placeholders.message}
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm"
+              />
+            </div>
+
+            <Button variant="pink" className="w-full" disabled={loading}>
+              {loading ? text.button.sending : text.button.send}
+            </Button>
+          </form>
+        </AnimatedSection>
       </div>
     </section>
   );

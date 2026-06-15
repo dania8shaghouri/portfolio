@@ -6,93 +6,200 @@ import shot3 from "/src/assets/img/Screenshot 2026-01-14 134935.png";
 import eco1 from "/src/assets/img/E1.png";
 import eco2 from "/src/assets/img/E2.png";
 import eco3 from "/src/assets/img/E3.png";
+
 export const projects = [
-  // staj1
   {
     company: "Scramblebit Marketing & Software Ltd.",
-    role: "Frontend Developer Intern",
+    role: {
+      en: "Frontend Developer Intern",
+      tr: "Frontend Geliştirici Stajyeri",
+    },
     meta: [
       { icon: "calendar", value: "June 2024 – July 2024" },
-      { icon: "location", value: "Istanbul, Turkey" },
-      { icon: "work", value: "Internship" },
+      {
+        icon: "location",
+        value: {
+          en: "Istanbul, Turkey",
+          tr: "İstanbul, Türkiye",
+        },
+      },
+      {
+        icon: "work",
+        value: {
+          en: "Internship",
+          tr: "Staj",
+        },
+      },
     ],
     tech: ["HTML", "CSS", "JavaScript"],
-    description: [
-      "Developed a web-based table reservation and food ordering system.",
-      "Designed frontend modules such as restaurant introduction pages, event listings, and chef profiles.",
-      "Built static user registration and login interfaces.",
-      "Implemented an interactive menu system with cart functionality.",
-      "Created fully responsive reservation forms for mobile, tablet, and desktop devices.",
-    ],
+    description: {
+      en: [
+        "Developed a web-based table reservation and food ordering system.",
+        "Designed frontend modules such as restaurant introduction pages, event listings, and chef profiles.",
+        "Built static user registration and login interfaces.",
+        "Implemented an interactive menu system with cart functionality.",
+        "Created fully responsive reservation forms for mobile, tablet, and desktop devices.",
+      ],
+      tr: [
+        "Web tabanlı masa rezervasyonu ve yemek sipariş sistemi geliştirdim.",
+        "Restoran tanıtım sayfaları, etkinlik listeleri ve şef profilleri gibi frontend modülleri tasarladım.",
+        "Statik kullanıcı kayıt ve giriş arayüzleri oluşturdum.",
+        "Etkileşimli menü sistemi ve sepet fonksiyonunu geliştirdim.",
+        "Mobil, tablet ve masaüstü cihazlar için tamamen responsive rezervasyon formları oluşturdum.",
+      ],
+    },
     links: {
       live: "https://locantajs.netlify.app/",
     },
   },
-  //   staj2
+
   {
     company: "Scramblebit Marketing & Software Ltd.",
-    role: "Full Stack Web Developer Intern",
+    role: {
+      en: "Full Stack Web Developer Intern",
+      tr: "Full Stack Web Geliştirici Stajyeri",
+    },
     meta: [
       { icon: "calendar", value: "August 2024 – September 2024" },
-      { icon: "location", value: "Istanbul, Turkey" },
-      { icon: "work", value: "Internship" },
+      {
+        icon: "location",
+        value: {
+          en: "Istanbul, Turkey",
+          tr: "İstanbul, Türkiye",
+        },
+      },
+      {
+        icon: "work",
+        value: {
+          en: "Internship",
+          tr: "Staj",
+        },
+      },
     ],
     tech: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB"],
-    description: [
-      "Developed a functional e-commerce web application with end-to-end features.",
-      "Implemented product listing, search functionality, cart management, and checkout flow.",
-      "Stored and managed order data using MongoDB.",
-      "Actively contributed to both frontend and backend development processes.",
-      "Gained hands-on experience with RESTful APIs and database integration.",
-    ],
+    description: {
+      en: [
+        "Developed a functional e-commerce web application with end-to-end features.",
+        "Implemented product listing, search functionality, cart management, and checkout flow.",
+        "Stored and managed order data using MongoDB.",
+        "Actively contributed to both frontend and backend development processes.",
+        "Gained hands-on experience with RESTful APIs and database integration.",
+      ],
+      tr: [
+        "Uçtan uca özelliklere sahip işlevsel bir e-ticaret web uygulaması geliştirdim.",
+        "Ürün listeleme, arama, sepet yönetimi ve ödeme akışını implement ettim.",
+        "Sipariş verilerini MongoDB ile yönettim.",
+        "Frontend ve backend geliştirme süreçlerine aktif katkı sağladım.",
+        "RESTful API ve veritabanı entegrasyonu konusunda deneyim kazandım.",
+      ],
+    },
     screenshots: [shot1, shot2, shot3],
   },
 
-  //   Graduation Project
   {
     company: "Graduation Project",
-    role: "Web-based Project Tracking and Management System",
+    role: {
+      en: "Web-based Project Tracking and Management System",
+      tr: "Web Tabanlı Proje Takip ve Yönetim Sistemi",
+    },
     meta: [
       { icon: "calendar", value: "2024" },
-      { icon: "academic", value: "TÜBİTAK 2209-A Supported Academic Project" },
-      { icon: "location", value: "University" },
+      {
+        icon: "academic",
+        value: {
+          en: "TÜBİTAK 2209-A Supported Academic Project",
+          tr: "TÜBİTAK 2209-A Destekli Akademik Proje",
+        },
+      },
+      {
+        icon: "location",
+        value: {
+          en: "University",
+          tr: "Üniversite",
+        },
+      },
     ],
     tech: ["Vue.js", "Node.js"],
-    description: [
-      "Developed a web-based system aimed at reducing time and resource loss caused by manual and paper-based project management processes in universities.",
-      "Designed a role-based structure supporting admin, advisor, and student users.",
-      "Digitalized project tracking, evaluation, approval, and reporting workflows.",
-      "Built a user-friendly, dynamic, and sustainable architecture using Vue.js on the frontend and Node.js on the backend.",
-    ],
+    description: {
+      en: [
+        "Developed a web-based system aimed at reducing time and resource loss caused by manual and paper-based project management processes in universities.",
+        "Designed a role-based structure supporting admin, advisor, and student users.",
+        "Digitalized project tracking, evaluation, approval, and reporting workflows.",
+        "Built a user-friendly, dynamic, and sustainable architecture using Vue.js on the frontend and Node.js on the backend.",
+      ],
+      tr: [
+        "Üniversitelerde manuel ve kâğıt tabanlı proje yönetiminden kaynaklanan zaman ve kaynak kaybını azaltmayı amaçlayan web tabanlı bir sistem geliştirdim.",
+        "Admin, danışman ve öğrenci kullanıcılarını destekleyen rol tabanlı bir yapı tasarladım.",
+        "Proje takip, değerlendirme, onay ve raporlama süreçlerini dijitalleştirdim.",
+        "Vue.js ile frontend ve Node.js ile backend kullanarak kullanıcı dostu, dinamik ve sürdürülebilir bir mimari oluşturdum.",
+      ],
+    },
   },
 
-  // personel
   {
     company: "Restaurant Web Application",
-    role: "Personal Frontend Project (Ongoing)",
+    role: {
+      en: "Personal Frontend Project (Ongoing)",
+      tr: "Kişisel Frontend Projesi (Devam Ediyor)",
+    },
     meta: [
       { icon: "calendar", value: "Ongoing" },
-      { icon: "personal", value: "Personal Project" },
-      { icon: "location", value: "Remote" },
+      {
+        icon: "personal",
+        value: {
+          en: "Personal Project",
+          tr: "Kişisel Proje",
+        },
+      },
+      {
+        icon: "location",
+        value: {
+          en: "Remote",
+          tr: "Uzaktan",
+        },
+      },
     ],
     tech: ["React", "Tailwind CSS", "React Router"],
-    description: [
-      "Rebuilding a previously developed restaurant website using modern React architecture.",
-      "Implemented a component-based frontend structure with reusable UI components.",
-      "Focused on clean, maintainable, and scalable code practices.",
-    ],
+    description: {
+      en: [
+        "Rebuilding a previously developed restaurant website using modern React architecture.",
+        "Implemented a component-based frontend structure with reusable UI components.",
+        "Focused on clean, maintainable, and scalable code practices.",
+      ],
+      tr: [
+        "Daha önce geliştirilmiş bir restoran web sitesini modern React mimarisi ile yeniden inşa ediyorum.",
+        "Yeniden kullanılabilir UI bileşenleri ile component tabanlı bir yapı oluşturdum.",
+        "Temiz, sürdürülebilir ve ölçeklenebilir kod yazımına odaklandım.",
+      ],
+    },
     links: {
       live: "https://resorantapp.netlify.app/",
       github: "https://github.com/dania8shaghouri/restorantTailwindReact",
     },
   },
+
   {
     company: "E-Commerce Web Application",
-    role: "Personal Full Stack Project (Ongoing)",
+    role: {
+      en: "Personal Full Stack Project (Ongoing)",
+      tr: "Kişisel Full Stack Projesi (Devam Ediyor)",
+    },
     meta: [
       { icon: "calendar", value: "2026" },
-      { icon: "personal", value: "Personal Project" },
-      { icon: "location", value: "Remote" },
+      {
+        icon: "personal",
+        value: {
+          en: "Personal Project",
+          tr: "Kişisel Proje",
+        },
+      },
+      {
+        icon: "location",
+        value: {
+          en: "Remote",
+          tr: "Uzaktan",
+        },
+      },
     ],
     tech: [
       "React",
@@ -102,17 +209,24 @@ export const projects = [
       "REST API",
       "Tailwind CSS",
     ],
-    description: [
-      "Built a full-stack e-commerce application with authentication (register/login), product listing, and product detail pages.",
-      "Implemented cart functionality including add, update quantity, and remove item features.",
-      "Started checkout flow with basic address information collection.",
-      "Developed RESTful APIs using Node.js and Express.",
-      "Managed data with MongoDB (users, products, cart).",
-      "Built a responsive frontend using React and Tailwind CSS.",
-    ],
-    screenshots: [eco1, eco2, eco3],
-    links: {
-      github: "https://github.com/dania8shaghouri/e-commerce",
+    description: {
+      en: [
+        "Built a full-stack e-commerce application with authentication (register/login), product listing, and product detail pages.",
+        "Implemented cart functionality including add, update quantity, and remove item features.",
+        "Started checkout flow with basic address information collection.",
+        "Developed RESTful APIs using Node.js and Express.",
+        "Managed data with MongoDB (users, products, cart).",
+        "Built a responsive frontend using React and Tailwind CSS.",
+      ],
+      tr: [
+        "Kimlik doğrulama (kayıt/giriş), ürün listeleme ve ürün detay sayfaları içeren full-stack bir e-ticaret uygulaması geliştirdim.",
+        "Sepete ekleme, miktar güncelleme ve ürün silme özelliklerini implemente ettim.",
+        "Temel adres bilgisi toplama ile checkout akışını başlattım.",
+        "Node.js ve Express kullanarak RESTful API geliştirdim.",
+        "Kullanıcı, ürün ve sepet verilerini MongoDB ile yönettim.",
+        "React ve Tailwind CSS ile responsive frontend geliştirdim.",
+      ],
     },
+    screenshots: [eco1, eco2, eco3],
   },
 ];

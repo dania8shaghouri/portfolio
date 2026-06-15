@@ -22,101 +22,150 @@ import { MdSettings } from "react-icons/md";
 
 export const skillsData = [
   {
-    title: "Frontend Development",
+    title: {
+      en: "Frontend Development",
+      tr: "Frontend Geliştirme",
+    },
     icon: FaCode,
     items: [
       {
         name: "HTML5",
         icon: FaHtml5,
         iconColor: "text-orange-600",
-        description: "Semantic markup for structured web pages",
+        description: {
+          en: "Semantic markup for structured web pages",
+          tr: "Yapısal web sayfaları için semantik HTML kullanımı",
+        },
       },
       {
         name: "JavaScript",
         icon: SiJavascript,
         iconColor: "text-[#F7DF1E]",
-        description:
-          "Building interactive and dynamic functionality on the web",
+        description: {
+          en: "Building interactive and dynamic functionality on the web",
+          tr: "Web üzerinde etkileşimli ve dinamik özellikler geliştirme",
+        },
       },
       {
         name: "React",
         icon: FaReact,
         iconColor: "text-cyan-400",
-        description: "Component-based approach for building user interfaces",
+        description: {
+          en: "Component-based approach for building user interfaces",
+          tr: "Component tabanlı kullanıcı arayüzü geliştirme",
+        },
       },
       {
         name: "Vue.js",
         icon: FaVuejs,
         iconColor: "text-[#41B883]",
-        description: "Reactive framework for developing front-end applications",
+        description: {
+          en: "Reactive framework for developing front-end applications",
+          tr: "Frontend uygulamalar geliştirmek için reaktif framework",
+        },
       },
       {
         name: "CSS3",
         icon: FaCss3Alt,
         iconColor: "text-blue-600",
-        description: "Styling layouts using modern CSS features",
+        description: {
+          en: "Styling layouts using modern CSS features",
+          tr: "Modern CSS özellikleri ile arayüz tasarımı",
+        },
       },
       {
         name: "Tailwind CSS",
         icon: SiTailwindcss,
         iconColor: "text-blue-700",
-        description: "Utility-first CSS for fast and consistent UI development",
+        description: {
+          en: "Utility-first CSS for fast and consistent UI development",
+          tr: "Hızlı ve tutarlı UI geliştirme için utility-first CSS",
+        },
       },
     ],
     color: "text-blue-600",
   },
+
   {
-    title: "Backend & Database",
+    title: {
+      en: "Backend & Database",
+      tr: "Backend & Veritabanı",
+    },
     icon: LuDatabase,
     items: [
       {
         name: "Node.js",
         icon: FaNodeJs,
         iconColor: "text-[#339933]",
-        description: "Server-side JavaScript runtime for building APIs",
+        description: {
+          en: "Server-side JavaScript runtime for building APIs",
+          tr: "API geliştirmek için sunucu tarafı JavaScript çalışma ortamı",
+        },
       },
       {
         name: "Express",
         icon: SiExpress,
         iconColor: "text-black",
-        description: "Minimal framework for building RESTful APIs",
+        description: {
+          en: "Minimal framework for building RESTful APIs",
+          tr: "RESTful API geliştirmek için minimal framework",
+        },
       },
       {
         name: "MongoDB",
         icon: SiMongodb,
         iconColor: "text-[#47A248]",
-        description: "NoSQL database for storing application data",
+        description: {
+          en: "NoSQL database for storing application data",
+          tr: "Uygulama verilerini saklamak için NoSQL veritabanı",
+        },
       },
       {
         name: "JWT",
         icon: SiJsonwebtokens,
         iconColor: "text-black",
-        description: "Token-based authentication and authorization",
+        description: {
+          en: "Token-based authentication and authorization",
+          tr: "Token tabanlı kimlik doğrulama ve yetkilendirme",
+        },
       },
     ],
     color: "text-green-600",
   },
+
   {
-    title: "Tools & Workflow",
+    title: {
+      en: "Tools & Workflow",
+      tr: "Araçlar & İş Akışı",
+    },
     icon: MdSettings,
     items: [
       {
         name: "Git",
         icon: FaGitAlt,
         iconColor: "text-[#F05032]",
-        description: "Version control for tracking code changes",
+        description: {
+          en: "Version control for tracking code changes",
+          tr: "Kod değişikliklerini takip etmek için versiyon kontrol sistemi",
+        },
       },
       {
         name: "Postman",
         icon: SiPostman,
         iconColor: "text-[#FF6C37]",
-        description: "API testing and request debugging tool",
+        description: {
+          en: "API testing and request debugging tool",
+          tr: "API test ve hata ayıklama aracı",
+        },
       },
       {
         name: "Vite",
         icon: SiVite,
         iconColor: "text-[#646CFF]",
-        description: "Fast development build tool for modern projects",
+        description: {
+          en: "Fast development build tool for modern projects",
+          tr: "Modern projeler için hızlı geliştirme aracı",
+        },
       },
     ],
     color: "text-purple-600",

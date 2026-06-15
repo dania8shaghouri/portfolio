@@ -5,7 +5,21 @@ import { SiLoop } from "react-icons/si";
 // data
 import { AboutSkills } from "../../data/AboutSkills";
 
-export default function About() {
+const content = {
+  en: {
+    sectionTitle: "About Me",
+    storyTitle: "My Professional Story",
+  },
+
+  tr: {
+    sectionTitle: "Hakkımda",
+    storyTitle: "Profesyonel Yolculuğum",
+  },
+};
+
+export default function About({ language }) {
+  const text = content[language];
+
   return (
     <section
       id="about"
@@ -22,7 +36,7 @@ export default function About() {
       rounded-xl text-xs font-bold
       bg-[var(--bg-header)]"
             >
-              About Me
+              {text.sectionTitle}
             </h3>
           </span>
 
@@ -35,9 +49,11 @@ export default function About() {
             >
               <div className="inline-flex gap-3 ">
                 <SiLoop className="text-[#e462ab] text-2xl" />
-                <h3 className="font-semibold mb-1">My Professional Story </h3>
+                <h3 className="font-semibold mb-1">{text.storyTitle} </h3>
               </div>
-              <p className="text-gray-600 leading-relaxed ">{aboutText}</p>
+              <p className="text-gray-600 leading-relaxed ">
+                {aboutText[language]}
+              </p>
             </div>
 
             {/* skills */}
@@ -53,10 +69,10 @@ export default function About() {
                     <Icon className="text-[#e462ab] text-4xl" />
                     <div>
                       <h3 className="font-semibold mb-1 pl-4">
-                        {skill.title}{" "}
+                        {skill.title[language]}
                       </h3>
                       <p className="text-gray-500 text-sm leading-relaxed pl-4">
-                        {skill.description}
+                        {skill.description[language]}
                       </p>
                     </div>
                   </div>

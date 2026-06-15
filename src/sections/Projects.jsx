@@ -4,7 +4,30 @@ import AnimatedSection from "../components/AnimatedSection";
 import { projects } from "../data/Projects";
 import { iconMap } from "../utils/iconMap";
 
-export default function Projects() {
+const content = {
+  en: {
+    badge: "Projects & Experience",
+    title: "Professional Journey",
+    description:
+      "A summary of my professional journey, internships, and hands-on projects, focusing on frontend development and modern web technologies.",
+    screenshots: "View Screenshots →",
+    liveDemo: "Live Demo",
+    github: "GitHub Repository",
+  },
+
+  tr: {
+    badge: "Projeler ve Deneyim",
+    title: "Profesyonel Yolculuğum",
+    description:
+      "Frontend geliştirme ve modern web teknolojilerine odaklanan profesyonel deneyimlerimin, stajlarımın ve projelerimin özeti.",
+    screenshots: "Ekran Görüntülerini Gör →",
+    liveDemo: "Canlı Demo",
+    github: "GitHub Deposu",
+  },
+};
+
+export default function Projects({ language }) {
+  const text = content[language];
   // null modal suan kapal
   const [activeScreenshots, setActiveScreenshots] = useState(null);
   //   sonraki onceki buttonlar icin
@@ -16,16 +39,14 @@ export default function Projects() {
       <div className="flex flex-col items-center text-center mb-20">
         <span className="mb-4">
           <h2 className="border border-gray-300 py-1 px-3 rounded-xl text-xs font-semibold bg-[var(--bg-header)]">
-            Projects & Experience
+            {text.badge}
           </h2>
         </span>
 
-        <h2 className="text-3xl font-bold mb-4">Professional Journey</h2>
+        <h2 className="text-3xl font-bold mb-4">{text.title}</h2>
 
         <p className="max-w-2xl text-sm md:text-base text-gray-600 leading-relaxed">
-          A summary of my professional journey, internships, and hands-on
-          projects, focusing on frontend development and modern web
-          technologies.
+          {text.description}
         </p>
       </div>
 
@@ -66,7 +87,7 @@ export default function Projects() {
 
                     {/* role */}
                     <p className="text-sm font-medium text-[#e462ab] mb-3">
-                      {project.role}
+                      {project.role[language]}
                     </p>
 
                     {/* meta */}
@@ -78,7 +99,9 @@ export default function Projects() {
                         return (
                           <span key={i} className="flex items-center gap-1">
                             <Icon size={14} className="text-[#005b4b]" />
-                            {item.value}
+                            {typeof item.value === "object"
+                              ? item.value[language]
+                              : item.value}
                           </span>
                         );
                       })}
@@ -86,7 +109,7 @@ export default function Projects() {
 
                     {/* description */}
                     <ul className="list-disc list-inside text-sm text-gray-600 space-y-1 mb-4 marker:text-[#e462ab]">
-                      {project.description.map((item, i) => (
+                      {project.description[language].map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
@@ -118,9 +141,7 @@ export default function Projects() {
                               target="_blank"
                               rel="noopener noreferrer"
                               title={
-                                key === "live"
-                                  ? "Live Demo"
-                                  : "GitHub Repository"
+                                key === "live" ? text.liveDemo : text.github
                               }
                               className="flex items-center gap-1 text-[#005b4b] hover:text-[#e462ab] transition"
                             >
@@ -138,7 +159,7 @@ export default function Projects() {
                           }}
                           className="text-sm font-medium text-[#005b4b] hover:underline"
                         >
-                          View Screenshots →
+                          {text.screenshots}
                         </button>
                       )}
                     </div>

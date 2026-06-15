@@ -1,7 +1,7 @@
 import SkillCard from "./SkillCard";
 import { skillsData } from "../../data/skillsData";
 
-export default function SkillsSection() {
+export default function SkillsSection({ language }) {
   return (
     <section id="skills" className="py-20 px-4 bg-[var(--bg-about)]">
       <div className="max-w-7xl mx-auto">
@@ -12,11 +12,16 @@ export default function SkillsSection() {
             </h2>
           </span>
 
-          <h2 className="text-3xl font-bold mb-4">Technologies & Tools</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            {language === "tr"
+              ? "Teknolojiler & Araçlar"
+              : "Technologies & Tools"}
+          </h2>
 
           <p className="max-w-2xl text-sm md:text-base text-gray-600 leading-relaxed">
-            Technologies and tools I use to build modern, responsive, and
-            scalable web applications.
+            {language === "tr"
+              ? "Modern, ölçeklenebilir ve responsive web uygulamaları geliştirmek için kullandığım teknolojiler ve araçlar."
+              : "Technologies and tools I use to build modern, responsive, and scalable web applications."}
           </p>
         </div>
 
@@ -24,10 +29,11 @@ export default function SkillsSection() {
           {skillsData.map((skill, i) => (
             <SkillCard
               key={i}
-              title={skill.title}
+              title={skill.title[language]}
               icon={skill.icon}
               items={skill.items}
               color={skill.color}
+              language={language}
             />
           ))}
         </div>

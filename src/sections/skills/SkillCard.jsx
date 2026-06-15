@@ -1,4 +1,10 @@
-export default function SkillCard({ title, icon: Icon, items, color }) {
+export default function SkillCard({
+  title,
+  icon: Icon,
+  items,
+  color,
+  language,
+}) {
   return (
     <div
       className="
@@ -17,11 +23,12 @@ export default function SkillCard({ title, icon: Icon, items, color }) {
       <div className="flex flex-col gap-4">
         {items.map((item, i) => {
           const Icon = item.icon;
+
           return (
             <div
               key={i}
               className="
-                flex  gap-3
+                flex gap-3
                 px-3 py-2
                 mt-2
                 rounded-lg
@@ -32,9 +39,13 @@ export default function SkillCard({ title, icon: Icon, items, color }) {
               <Icon
                 className={`text-xl mt-1 ${item.iconColor ?? "text-gray-500"}`}
               />
+
               <div className="flex flex-col">
                 <span className="font-medium">{item.name}</span>
-                <p className="text-sm text-gray-500 ">{item.description}</p>
+
+                <p className="text-sm text-gray-500">
+                  {item.description?.[language]}
+                </p>
               </div>
             </div>
           );

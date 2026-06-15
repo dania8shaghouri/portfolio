@@ -1,6 +1,48 @@
 import SocialLinks from "../SocialLinks";
 import AnimatedSection from "../../components/AnimatedSection";
-export default function Footer() {
+
+const content = {
+  en: {
+    description:
+      "Frontend Developer focused on building clean, responsive, and user-friendly interfaces using modern web technologies.",
+    built: "Built with 🩵",
+    quickLinks: "Quick Links",
+    follow: "Follow Me",
+    followText:
+      "Follow me for new projects, updates, and professional insights.",
+    links: {
+      home: "Home",
+      about: "About Me",
+      projects: "Projects",
+      skills: "Skills",
+      contact: "Contact",
+    },
+    rights: "All rights reserved.",
+  },
+
+  tr: {
+    description:
+      "Modern web teknolojileriyle temiz, responsive ve kullanıcı dostu arayüzler geliştiren Frontend Developer.",
+
+    built: "Şu teknolojilerle geliştirildi 🩵",
+    quickLinks: "Hızlı Bağlantılar",
+    follow: "Beni Takip Et",
+    followText:
+      "Yeni projeler, güncellemeler ve profesyonel paylaşımlar için takip edin.",
+
+    links: {
+      home: "Anasayfa",
+      about: "Hakkımda",
+      projects: "Projeler",
+      skills: "Yetenekler",
+      contact: "İletişim",
+    },
+    rights: "Tüm hakları saklıdır.",
+  },
+};
+
+export default function Footer({ language }) {
+  const text = content[language];
   return (
     <footer className="bg-[var(--bg-about)] border-t border-gray-300 mt-24">
       <AnimatedSection direction="down">
@@ -12,59 +54,54 @@ export default function Footer() {
             </h3>
 
             <p className="text-sm text-gray-600 leading-relaxed text-center">
-              Frontend Developer focused on building clean, responsive, and
-              user-friendly interfaces using modern web technologies.
+              {text.description}
             </p>
 
             <p className="text-gray-500 text-center">
-              Built with 🩵<span className="font-medium">React</span> &{" "}
+              {text.built} <span className="font-medium">React</span> &{" "}
               <span className="font-medium">Tailwind CSS</span>
             </p>
           </div>
 
           {/* 2. Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-lg text-center">Quick Links</h3>
+            <h3 className="font-semibold text-lg text-center">
+              {text.quickLinks}
+            </h3>
 
             <ul className="space-y-2 text-sm text-center">
               <li>
-                <a
-                  href="#"
-                  className="text-gray-600 hover:text-[#005b4b] transition"
-                >
-                  Home
+                <a href="#" className="text-gray-600 hover:text-[#005b4b]">
+                  {text.links.home}
                 </a>
               </li>
               <li>
-                <a
-                  href="#about"
-                  className="text-gray-600 hover:text-[#005b4b] transition"
-                >
-                  About Me
+                <a href="#about" className="text-gray-600 hover:text-[#005b4b]">
+                  {text.links.about}
                 </a>
               </li>
               <li>
                 <a
                   href="#projects"
-                  className="text-gray-600 hover:text-[#005b4b] transition"
+                  className="text-gray-600 hover:text-[#005b4b]"
                 >
-                  Projects
+                  {text.links.projects}
                 </a>
               </li>
               <li>
                 <a
                   href="#skills"
-                  className="text-gray-600 hover:text-[#005b4b] transition"
+                  className="text-gray-600 hover:text-[#005b4b]"
                 >
-                  Skills
+                  {text.links.skills}
                 </a>
               </li>
               <li>
                 <a
                   href="#contact"
-                  className="text-gray-600 hover:text-[#005b4b] transition"
+                  className="text-gray-600 hover:text-[#005b4b]"
                 >
-                  Contact
+                  {text.links.contact}
                 </a>
               </li>
             </ul>
@@ -72,10 +109,10 @@ export default function Footer() {
 
           {/* 3. Follow Me */}
           <div className="space-y-4 text-center">
-            <h3 className="font-semibold text-lg text-center">Follow Me</h3>
+            <h3 className="font-semibold text-lg text-center">{text.follow}</h3>
 
             <p className="text-sm text-gray-600 text-center">
-              Follow me for new projects, updates, and professional insights.
+              {text.followText}
             </p>
 
             <SocialLinks />
@@ -84,7 +121,7 @@ export default function Footer() {
       </AnimatedSection>
       {/* Bottom bar */}
       <div className="border-t border-gray-300 py-6 text-center text-xs text-gray-500">
-        © {new Date().getFullYear()} Dania. All rights reserved.
+        © {new Date().getFullYear()} Dania. {text.rights}
       </div>
     </footer>
   );

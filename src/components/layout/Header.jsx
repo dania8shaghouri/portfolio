@@ -4,7 +4,7 @@ import { CiLight } from "react-icons/ci";
 import { HiX } from "react-icons/hi";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-export default function Header() {
+export default function Header({ language, setLanguage }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleScroll = (id) => {
@@ -15,13 +15,23 @@ export default function Header() {
     setIsOpen(false);
   };
 
-  const menuItems = [
-    { label: "About Me", id: "about" },
-    { label: "Projects", id: "projects" },
-    { label: "Skills", id: "skills" },
-    { label: "Certificates", id: "certificates" },
-    { label: "Contact", id: "contact" },
-  ];
+  const menuItems = {
+    en: [
+      { label: "About Me", id: "about" },
+      { label: "Projects", id: "projects" },
+      { label: "Skills", id: "skills" },
+      { label: "Certificates", id: "certificates" },
+      { label: "Contact", id: "contact" },
+    ],
+
+    tr: [
+      { label: "Hakkımda", id: "about" },
+      { label: "Projeler", id: "projects" },
+      { label: "Yetenekler", id: "skills" },
+      { label: "Sertifikalar", id: "certificates" },
+      { label: "İletişim", id: "contact" },
+    ],
+  };
 
   return (
     <header className="fixed top-4 left-0 right-0 px-4 w-full z-50 ">
@@ -38,7 +48,7 @@ export default function Header() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-10 text-black font-medium">
-          {menuItems.map((item) => (
+          {menuItems[language].map((item) => (
             <li
               key={item.id}
               onClick={() => handleScroll(item.id)}
@@ -53,10 +63,20 @@ export default function Header() {
 
         {/* Right actions */}
         <div className="flex items-center gap-3">
-          <button className="rounded-md p-1 border border-gray-300 hover:bg-[var(--icon-hover)]">
+          {/* <button className="rounded-md p-1 border border-gray-300 hover:bg-[var(--icon-hover)]">
             <CiLight className="w-5 h-5 " />
+          </button> */}
+          <button
+            onClick={() => setLanguage(language === "en" ? "tr" : "en")}
+            className="
+    rounded-md px-3 py-1
+    border border-gray-300
+    hover:bg-[var(--icon-hover)]
+    text-sm font-medium
+  "
+          >
+            {language === "en" ? "TR" : "EN"}
           </button>
-
           {/* Hamburger (mobile) */}
           <button
             onClick={() => setIsOpen(!isOpen)}

@@ -8,12 +8,45 @@ import SocialLinks from "../components/SocialLinks";
 import { CgMail } from "react-icons/cg";
 import AnimatedSection from "../components/AnimatedSection";
 
-export default function Hero() {
+const heroContent = {
+  en: {
+    badge: "🤖 Computer Engineer",
+    titlePrefix: "I'm",
+    typed: [
+      "Dania Shaghouri",
+      "Frontend Developer",
+      "React Developer",
+      "UI Enthusiast",
+    ],
+    description:
+      "I focus on building clean, responsive and accessible user interfaces. I mainly work with React and Tailwind CSS, and I also have experience with Vue and full-stack projects.",
+    projectButton: "View Projects",
+    contactButton: "Contact Me",
+  },
+
+  tr: {
+    badge: "🤖 Bilgisayar Mühendisi",
+    titlePrefix: "Ben",
+    typed: [
+      "Dania Shaghouri",
+      "Frontend Geliştirici",
+      "React Geliştirici",
+      "UI Meraklısı",
+    ],
+    description:
+      "Temiz, responsive ve erişilebilir kullanıcı arayüzleri geliştirmeye odaklanıyorum. Ağırlıklı olarak React ve Tailwind CSS ile çalışıyor, ayrıca Vue ve full-stack projelerde de deneyim sahibi bulunuyorum.",
+    projectButton: "Projeleri Gör",
+    contactButton: "İletişime Geç",
+  },
+};
+
+export default function Hero({ language }) {
+  const content = heroContent[language];
   return (
     <section className="min-h-screen bg-[var(--bg-hero)] flex items-center justify-center ">
       <AnimatedSection direction="down">
         <div
-          className="capitalize 
+          className=" 
       flex flex-col gap-2 items-center justify-center
       px-4
     max-w-3xl
@@ -30,20 +63,15 @@ export default function Hero() {
         py-1 px-2 rounded-lg bg-[var(--bg-pink)]
         mt-6"
           >
-            🤖Computer engineer
+            {content.badge}
           </span>
 
           {/* Typed title */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mt-3">
-            I’m{" "}
+            {content.titlePrefix}{" "}
             <span className="text-gradient ">
               <ReactTyped
-                strings={[
-                  "Dania Shaghouri",
-                  "Frontend Developer",
-                  "React Developer",
-                  "UI Enthusiast",
-                ]}
+                strings={content.typed}
                 typeSpeed={80}
                 backSpeed={50}
                 backDelay={1500}
@@ -51,14 +79,14 @@ export default function Hero() {
               />
             </span>
           </h1>
+
           <p
             className="max-w-[var(--container-3xl)] text-center text-base sm:text-lg md:text-xl
     mt-4 sm:mt-6 "
           >
-            I focus on building clean, responsive and accessible user
-            interfaces. I mainly work with React and Tailwind CSS, and I also
-            have experience with Vue and full-stack projects.
+            {content.description}
           </p>
+
           {/*  buttons */}
           <div className="flex gap-4 mt-6">
             <Button
@@ -69,12 +97,13 @@ export default function Hero() {
               }
               variant="pink"
             >
-              View Projects
+              {content.projectButton}
             </Button>
+
             <a href="mailto:dania@example.com">
               <Button>
                 <CgMail className="mr-1 text-lg" />
-                Contact Me
+                {content.contactButton}
               </Button>
             </a>
           </div>
