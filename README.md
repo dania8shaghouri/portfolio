@@ -1,53 +1,62 @@
-# Dania's Portfolio
+# Personal Portfolio Website
+
+This is my personal portfolio website built to showcase my projects, skills, and experience as a Full-Stack Developer.
+
+The portfolio is developed with a focus on clean UI, responsiveness, and user experience.
+
+---
 
 ## Live Demo
-[Check it out here](https://dania-portfoli.netlify.app)
 
-## About
-This is my personal portfolio showcasing my skills, projects, and professional story. Built with **React**, **Tailwind CSS**, and **Framer Motion** for smooth animations.
+👉 https://dania-portfoli.netlify.app/
 
-## Setup
+---
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/dania8shaghouri/portfolio.git
+## About Me
 
-2. Install dependencies
-npm install
+I am a Computer Engineering graduate specializing in full-stack web development.  
+I build responsive and user-friendly web applications using modern technologies like React and Node.js.
 
-3. Add environment variables
-Create a .env file in the project root and add:
-VITE_EMAILJS_SERVICE_ID=your_service_id
-VITE_EMAILJS_TEMPLATE_ID=your_template_id
-VITE_EMAILJS_PUBLIC_KEY=your_public_key
+I have experience in both frontend and backend development through internships and personal projects.
 
-4. Start the development server
-npm run dev
+---
 
-A personal portfolio website showcasing my projects, skills, and professional background, built with React, Tailwind CSS, and Framer Motion for smooth animations. Includes a fully functional contact form using EmailJS.
+## Features
 
-Features
+- Responsive design (mobile-friendly)
+- Projects showcase section
+- Skills overview
+- Contact section
+- Modern UI/UX design
 
-Responsive design for all devices
+---
 
-Smooth entrance animations for all sections (About Me, Skills, Projects, Contact)
+## Technologies Used
 
-Contact form with validation, loading state, and toast notifications
+### Frontend
+- React
+- JavaScript
+- HTML
+- CSS
+- Tailwind CSS
 
-Project showcase with tech stack, modal screenshots, and interactive links
+### Tools
+- Git & GitHub
+- Netlify
 
-Skills section highlighting key technologies and tools
+---
 
-Tech Stack
+## Projects Highlighted
 
-React (hooks & functional components)
+- E-Commerce Web Application (Full-Stack)
+- Restaurant Reservation System
+- Project Management System (TÜBİTAK 2209-A)
 
-Tailwind CSS
+---
 
-Framer Motion (animations)
 
-EmailJS (contact form)
+## Author
 
-React Hot Toast (notifications)
-
-Netlify (deployment)
+Dania Shaghouri
+Computer Engineering Graduate
+Full-Stack Web Developer
