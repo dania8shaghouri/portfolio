@@ -100,7 +100,7 @@ export default function Hero({ language }) {
               {content.projectButton}
             </Button>
 
-            <a href="mailto:daniashaghouri@mail.com">
+            <a href="mailto:daniashaghouri@gmail.com">
               <Button>
                 <CgMail className="mr-1 text-lg" />
                 {content.contactButton}
