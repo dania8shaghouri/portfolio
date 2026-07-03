@@ -90,16 +90,15 @@ export default function Header({ language, setLanguage }) {
         {isOpen && (
           <ul
             className="absolute top-full left-0 w-full
-              bg-[var(--bg-header)] rounded-xl shadow-lg
-              flex flex-col  gap-4 p-4 md:hidden
-              border-t border-gray-200 mt-4"
+      bg-[var(--bg-header)] rounded-xl shadow-lg
+      flex flex-col gap-4 p-4 md:hidden
+      border-t border-gray-200 mt-4"
           >
-            {menuItems.map((item) => (
+            {menuItems[language].map((item) => (
               <li
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
-                className="cursor-pointer rounded-md hover:border hover:border-gray-200 hover:rounded-lg hover:bg-white
-                  transition-all px-3 py-3 text-start font-medium"
+                className="cursor-pointer rounded-md hover:border hover:border-gray-200 hover:bg-white transition-all px-3 py-3 text-start font-medium"
               >
                 {item.label}
               </li>
