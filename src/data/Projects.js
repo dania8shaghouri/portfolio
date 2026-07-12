@@ -179,7 +179,7 @@ export const projects = [
   },
 
   {
-    company: "E-Commerce Web Application",
+    company: "Novatech Store",
     role: {
       en: "Personal Full Stack Project (Ongoing)",
       tr: "Kişisel Full Stack Projesi (Devam Ediyor)",
@@ -203,29 +203,38 @@ export const projects = [
     ],
     tech: [
       "React",
+      "TypeScript",
       "Node.js",
-      "Express",
+      "Express.js",
       "MongoDB",
-      "REST API",
       "Tailwind CSS",
+      "REST API",
+      "JWT",
     ],
+
     description: {
       en: [
-        "Built a full-stack e-commerce application with authentication (register/login), product listing, and product detail pages.",
-        "Implemented cart functionality including add, update quantity, and remove item features.",
-        "Started checkout flow with basic address information collection.",
-        "Developed RESTful APIs using Node.js and Express.",
-        "Managed data with MongoDB (users, products, cart).",
-        "Built a responsive frontend using React and Tailwind CSS.",
+        "Developed a full-stack e-commerce application with JWT authentication and role-based authorization.",
+        "Implemented product listing, dynamic product detail pages, wishlist, shopping cart, checkout flow and order management.",
+        "Built advanced product filtering and sorting by category, brand, availability, price, popularity and newest products.",
+        "Designed a responsive user interface with reusable React components, skeleton loading states and custom SVG animations.",
+        "Developed secure RESTful APIs using Express.js, MongoDB, Helmet, Rate Limiting and Zod validation.",
+        "Currently redesigning the admin dashboard with modern analytics and management features.",
       ],
+
       tr: [
-        "Kimlik doğrulama (kayıt/giriş), ürün listeleme ve ürün detay sayfaları içeren full-stack bir e-ticaret uygulaması geliştirdim.",
-        "Sepete ekleme, miktar güncelleme ve ürün silme özelliklerini implemente ettim.",
-        "Temel adres bilgisi toplama ile checkout akışını başlattım.",
-        "Node.js ve Express kullanarak RESTful API geliştirdim.",
-        "Kullanıcı, ürün ve sepet verilerini MongoDB ile yönettim.",
-        "React ve Tailwind CSS ile responsive frontend geliştirdim.",
+        "JWT tabanlı kimlik doğrulama ve rol bazlı yetkilendirme içeren full-stack bir e-ticaret uygulaması geliştirdim.",
+        "Ürün listeleme, dinamik ürün detay sayfaları, favoriler, sepet, checkout akışı ve sipariş yönetimi özelliklerini geliştirdim.",
+        "Kategori, marka, stok durumu, fiyat, popülerlik ve yeniliğe göre gelişmiş filtreleme ve sıralama özellikleri ekledim.",
+        "Yeniden kullanılabilir React bileşenleri, skeleton loading ekranları ve özel SVG animasyonları ile responsive bir kullanıcı arayüzü tasarladım.",
+        "Express.js, MongoDB, Helmet, Rate Limiting ve Zod kullanarak güvenli RESTful API'ler geliştirdim.",
+        "Modern analiz ve yönetim özelliklerine sahip yeni bir Admin Dashboard üzerinde geliştirmelere devam ediyorum.",
       ],
+    },
+
+    links: {
+      live: "https://ecommerce-frontend-lyart-one.vercel.app/",
+      github: "https://github.com/dania8shaghouri/e-commerce",
     },
     screenshots: [eco1, eco2, eco3],
   },
