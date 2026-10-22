@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dania-portfoli.netlify.app/sitemap.xml
